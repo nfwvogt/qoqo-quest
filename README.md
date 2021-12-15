@@ -27,6 +27,17 @@ For usage examples see the examples section of [qoqo](https://github.com/HQSquan
 At the moment due to build problems in manylinux containers only python packages for macOS are created automatically and added to PyPi.
 
 A source distribution now exists but requires a Rust install with a rust version > 1.47 and a maturin version { >= 0.12, <0.13 } in order to be built.
+By default qoqo-quest is build in the the single-threaded mode. To use multithreading build a package with
+
+```shell
+maturin build -m qoqo-quest/Cargo.toml  --release --cargo-extra-args="--features openmp"
+```
+
+or for macos
+
+```shell
+RUSTFLAGS="-C link-arg=-undefined -C link-arg=dynamic_lookup" maturin build -m qoqo-quest/Cargo.toml  --release --cargo-extra-args="--features openmp"
+```
 
 ## roqoqo-quest
 
@@ -40,6 +51,8 @@ A source distribution now exists but requires a Rust install with a rust version
 roqoqo-quest allows to simulate the execution of roqoqo quantum circuits directly from rust code with the help of the QuEST quantum simulator.
 roqoqo-quest is designed to be able to simulate all operations that are part of roqoqo.
 For usage examples see the examples section of [roqoqo](https://github.com/HQSquantumsimulations/qoqo/).
+
+By default roqoqo-quest uses the single-threaded mode of QuEST. To use multithreading use roqoqo-quest with the `openmp` feature flag.
 
 ### QuEST build options
 
