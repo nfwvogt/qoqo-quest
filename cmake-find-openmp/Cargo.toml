@@ -6,12 +6,12 @@ license = "Apache-2.0"
 edition = "2021"
 rust-version = "1.56"
 categories = ["build-dependencies"]
-readme = "../README.md"
+readme = "README.md"
 repository = "https://github.com/HQSquantumsimulations/qoqo-quest"
 homepage = "https://github.com/HQSquantumsimulations/qoqo-quest"
-documentation = "https://docs.rs/quest-sys/"
+documentation = "https://docs.rs/cmake-find-openmp/"
 description = "Use CMake to create right linking options for openmp"
-exclude = ["tests*", "examples*", "*.code-workspace"]
+include = ["src*", "LICENSE", "README.md"]
 
 
 [lib]
