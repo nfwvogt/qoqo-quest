@@ -33,7 +33,7 @@ futures ={version = "0.3", optional=true}
 rayon = {version="1.5", optional=true}
 
 [dev-dependencies]
-test-case="2.0"
+test-case="3.0"
 criterion = {version="0.3"}
 
 [features]
